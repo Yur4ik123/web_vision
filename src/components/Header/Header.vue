@@ -94,9 +94,9 @@
                               <ul class="third__level-list">
                                 <li v-for="i in 40" class="third__level-item">
                                   <a href="" class="third__level-link">
-                                      <div class="img__wrapper">
-                                        <img src="@/assets/img/prod.png" width="70" height="50" alt="">
-                                      </div>
+                                    <div class="img__wrapper">
+                                      <img src="@/assets/img/prod.png" width="70" height="50" alt="">
+                                    </div>
                                     <div class="title__wrapper">
                                       <div class="title">
                                         Чай "Асорті" (12 шт), 50 г.
@@ -192,7 +192,7 @@
             </div>
           </div>
           <nav class="nav">
-            <!--            <NavList></NavList>-->
+            <NavList></NavList>
           </nav>
         </div>
 
@@ -225,17 +225,18 @@
 
 </template>
 <script>
-import SearchIcon from "../components/icons/SerachIcon.vue"
-import WishlistIcon from "../components/icons/WishlistIcon.vue"
-import CartIcon from "../components/icons/CartIcon.vue"
-import BusinessIcon from "../components/icons/BusinessIcon.vue"
-import CatalogIcon from "../components/icons/CatalogIcon.vue"
-import NavList from "./NavList.vue";
-import ChevronRightIcon from "./icons/ChevronRightIcon.vue";
-import OpenCatalogIcon from "./icons/OpenCatalogIcon.vue";
+import SearchIcon from "../icons/SerachIcon.vue"
+import WishlistIcon from "../icons/WishlistIcon.vue"
+import CartIcon from "../icons/CartIcon.vue"
+import BusinessIcon from "../icons/BusinessIcon.vue"
+import CatalogIcon from "../icons/CatalogIcon.vue"
+import NavList from "../NavList.vue";
+import ChevronRightIcon from "../icons/ChevronRightIcon.vue";
+import OpenCatalogIcon from "../icons/OpenCatalogIcon.vue";
 
 import Simplebar from 'simplebar-vue';
 import 'simplebar-vue/dist/simplebar.min.css';
+
 export default {
   components: {
     OpenCatalogIcon,
@@ -434,7 +435,8 @@ export default {
             }
           }
         }
-        .first__level{
+
+        .first__level {
 
         }
 
@@ -446,19 +448,22 @@ export default {
           background-color: $gray-ultra-light;
         }
 
-        .third__level{
+        .third__level {
           top: 0 !important;
           left: 100% !important;
 
           width: 880px;
-          border-radius: 0px 0px  9px 0px;
-          .simplebar__elem{
+          border-radius: 0px 0px 9px 0px;
+
+          .simplebar__elem {
             max-height: 548px;
-            .simplebar-vertical{
+
+            .simplebar-vertical {
               right: 0;
               width: 6px;
               background-color: $gray-light;
-              .simplebar-scrollbar:before{
+
+              .simplebar-scrollbar:before {
                 background: $red;
                 width: 6px;
                 left: 0;
@@ -467,7 +472,8 @@ export default {
                 opacity: 1;
               }
             }
-            &:before{
+
+            &:before {
               left: 0;
               right: 6px;
               bottom: 0;
@@ -478,19 +484,21 @@ export default {
               background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.95) 67.19%);
             }
           }
-          .third__level-list{
+
+          .third__level-list {
             display: grid;
             padding: 20px;
-            grid-template-columns: 1fr 1fr ;
+            grid-template-columns: 1fr 1fr;
             grid-gap: 14px 20px;
             position: relative;
             background-color: white;
 
 
-            .third__level-item{
+            .third__level-item {
               position: relative;
               z-index: 1;
-              a{
+
+              a {
                 border-radius: 9px;
                 border: 1px solid $gray-light;
                 display: grid;
@@ -498,11 +506,13 @@ export default {
                 text-transform: none;
                 grid-template-columns: 70px 1fr;
                 grid-gap: 10px;
-                .img__wrapper{
+
+                .img__wrapper {
                   align-self: center;
                   justify-self: center;
                 }
-                .title__wrapper{
+
+                .title__wrapper {
                   display: flex;
                   flex-direction: column;
                   align-content: center;
@@ -512,14 +522,17 @@ export default {
                   font-size: 15px;
                   font-weight: 500;
                   line-height: 20px;
-                  .title{
+
+                  .title {
                     overflow: hidden;
                   }
-                  .price__qty{
-                    .price{
+
+                  .price__qty {
+                    .price {
                       margin-right: 6px;
                     }
-                    .qty{
+
+                    .qty {
                       font-size: 13px;
                       font-weight: 600;
                       color: $gray-dark;
@@ -574,6 +587,81 @@ export default {
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .header .main__bar .main__bar-mid .catalog .third__level {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .header .main__bar .container {
+    grid-template-columns: 70px 1fr 100px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .header .main__bar .container {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .header .main__bar .main__bar-mid {
+    .btn__wrapper {
+      align-self: center;
+    }
+
+    .catalog {
+      align-self: center;
+
+      .uk-dropdown {
+        width: 240px;
+      }
+
+      .third__level {
+        width: 600px;
+      }
+    }
+
+    .catalog__list .catalog__item a {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .header .main__bar {
+    .container{
+      grid-template-columns: 55px 1fr 100px;
+      grid-gap: 10px;
+    }
+    .main__bar-mid {
+      grid-template-columns: 292px 1fr;
+
+      .bar__btns {
+        grid-gap: 10px;
+        grid-template-columns: 1fr 1.4fr;
+      }
+
+      .nav {
+        padding: 0;
+      }
+
+      .catalog {
+        .third__level {
+          width: 400px;
+        }
+
+        .third__level {
+          .third__level-list {
+            grid-template-columns: 1fr;
           }
         }
       }

@@ -45,4 +45,27 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 1600px) {
+  .nav__list {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .nav__list {
+    gap: 15px;
+    .nav__list-item{
+      font-size: 14px;
+    }
+  }
+}
+@media screen and (max-width: 1230px) {
+  .nav__list {
+    gap: 10px;
+    .nav__list-item{
+      font-size: 13px;
+    }
+  }
+}
 </style>
