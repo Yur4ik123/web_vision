@@ -3,6 +3,8 @@ import Header from "./components/Header/Header.vue";
 import HeaderMobile from "./components/Header/HeaderMobile.vue";
 import {computed} from "vue";
 import MobileBurger from "./components/Header/MobileBurger.vue";
+import Footer from "./components/Footer.vue";
+import MobileNav from "./components/MobileNav.vue";
 
 export default {
 
@@ -27,6 +29,8 @@ export default {
     }
   },
   components: {
+    MobileNav,
+    Footer,
     MobileBurger,
     HeaderMobile,
     Header
@@ -41,13 +45,13 @@ export default {
     <div class="catalog__overlay"></div>
     <RouterView/>
   </div>
-
+  <Footer/>
+  <MobileNav v-if="isMobile"/>
   <MobileBurger v-if="isMobile"></MobileBurger>
 </template>
 
 <style lang="scss">
 .content {
-  height: 100vh;
   position: relative;
   z-index: 1;
 
