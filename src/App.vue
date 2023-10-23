@@ -1,34 +1,57 @@
 <script>
 import Header from "./components/Header/Header.vue";
+import HeaderMobile from "./components/Header/HeaderMobile.vue";
+import {computed} from "vue";
+import MobileBurger from "./components/Header/MobileBurger.vue";
+
 export default {
-  created() {
 
-  },
-  methods:{
-    mobileDetect(){
-
+  data() {
+    return {
+      isMobile: false
     }
   },
-  components:{
+  created() {
+    this.checkMobile();
+    window.addEventListener('resize', this.checkMobile)
+  },
+  provide() {
+    return {
+      // explicitly provide a computed property
+      isMobile: computed(() => this.isMobile)
+    }
+  },
+  methods: {
+    checkMobile() {
+      this.isMobile = window.innerWidth < 992
+    }
+  },
+  components: {
+    MobileBurger,
+    HeaderMobile,
     Header
   }
 }
 </script>
 
 <template>
-  <Header/>
+  <Header v-if="!isMobile"/>
+  <HeaderMobile v-else></HeaderMobile>
   <div class="content">
     <div class="catalog__overlay"></div>
     <RouterView/>
   </div>
+
+  <MobileBurger v-if="isMobile"></MobileBurger>
 </template>
 
 <style lang="scss">
-.content{
+.content {
   height: 100vh;
   position: relative;
   z-index: 1;
-  .catalog__overlay{
+
+  .catalog__overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -42,8 +65,9 @@ export default {
   }
 
 }
-body:has(.catalog__btn[aria-expanded="true"]){
-  .content .catalog__overlay{
+
+body:has(.catalog__btn[aria-expanded="true"]) {
+  .content .catalog__overlay {
     visibility: visible;
     opacity: 1;
     z-index: 2;

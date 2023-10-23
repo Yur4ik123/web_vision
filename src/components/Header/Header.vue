@@ -43,7 +43,7 @@
     <div class="main__bar">
       <div class="container">
         <div class="logo">
-          <a href=""><img src="@/assets/img/logo.svg" width="55" height="58" alt=""></a>
+          <a href=""><img src="@/assets/img/icons/logo.svg" width="55" height="58" alt=""></a>
         </div>
         <div class="main__bar-mid">
           <div class="bar__btns">
@@ -90,7 +90,7 @@
                             <ChevronRightIcon/>
                           </a>
                           <div uk-dropdown="pos:right-center;delay-hide:30" class="third__level">
-                            <Simplebar autoHide="false" class="simplebar__elem">
+                            <Simplebar :autoHide="false" class="simplebar__elem">
                               <ul class="third__level-list">
                                 <li v-for="i in 40" class="third__level-item">
                                   <a href="" class="third__level-link">

@@ -7,14 +7,15 @@
   font-size: $fz;
   font-weight: 700;
   gap: 16px;
-  @media screen and (max-width: 1370px){
+  @media screen and (min-width: 992px) and (max-width: 1370px){
     font-size: 14px;
     gap: 10px;
     height: 40px;
   }
-  @media screen and (max-width: 1230px){
+  @media screen and (min-width: 992px) and (max-width: 1230px){
     padding: 5px 10px;
   }
+
 }
 @mixin btn-red{
   @include btn;
